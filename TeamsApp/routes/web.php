@@ -26,9 +26,7 @@ Route::get('/create',[TeamController::class,'create'])-> name('create');
 
 Route::post('/team',[TeamController::class,'store'])-> name('store');
 
-Route::get('/edit/{team}',[TeamController::class,'edit'])-> name('edit');
 
-Route::patch('/update/{team}',[TeamController::class,'update'])-> name('update');
 
 
 Route::get('/show/{team}',[TeamController::class,'show'])-> name('show');

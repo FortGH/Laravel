@@ -20,13 +20,6 @@
         <h2>
             Pais: {{$teams->pais}}
         </h2>
-    </div>
-    <div class="flex p-20 m-20">
-        <div>
-            <button class="">
-                <a href={{route('edit',$teams->id)}}>Edit</a> 
-            </button>
-        </div>
-    </div>
+   
 
 </x-layouts.app>
