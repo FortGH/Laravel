@@ -12,4 +12,11 @@ class TeamController extends Controller
         $teams = Team::get();
         return view('components.index',['teams' => $teams]);
     }
+
+    public function show($x){
+
+        $team = Team::findOrFail($x);
+       
+        return view('components.show',['teams' => $team]);
+    }
 }
