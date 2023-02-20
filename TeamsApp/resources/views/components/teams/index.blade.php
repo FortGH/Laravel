@@ -3,6 +3,11 @@
         Teams
     </x-slot>
 
+    @if(session('team'))
+        <div>
+            {{session('team')}}
+        </div>
+    @endif
      @foreach($teams as $team)
         <div>
             <h2>
