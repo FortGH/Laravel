@@ -44,7 +44,6 @@ class TeamController extends Controller
         session()->flash('team','Team created successfully');
 
         return to_route('index');
-        
     }
 
    

@@ -22,9 +22,9 @@ Route::get('/',[TeamController::class,'index'])-> name('index');
 
 
 
-Route::get('/create',[TeamController::class,'create'])-> name('create');
+Route::get('/create',[TeamController::class,'create'])->name('create');
 
-Route::post('/team',[TeamController::class,'store'])-> name('store');
+Route::post('/team',[TeamController::class,'store'])->name('store');
 
 
 

@@ -8,7 +8,7 @@
         @csrf
         <label >
             Nombre</br>
-            <input name="nombre" type="text" value={{old('nombre')}}>
+            <input name="nombre" type="text" value={{ old('nombre')}}>
             @error('nombre')
         </br>
                   <small>{{$message}}</small>
