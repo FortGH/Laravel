@@ -3,6 +3,7 @@
         Edit Team
     </x-slot>
     <h1 class="text-center text-red-700 text-xl">Edit Team</h1>
+    
     <form action={{route('update', $teams->id)}} method="POST">
 
         @csrf @method('patch')

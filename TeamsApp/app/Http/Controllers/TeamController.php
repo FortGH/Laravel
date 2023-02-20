@@ -48,7 +48,7 @@ class TeamController extends Controller
 
     public function edit($team){
         $teams =Team::find($team);
-        return view('components.edit',['teams'=> $teams]);
+        return view('components.teams.edit',['teams'=> $teams]);
     }
 
     public function update(Request $request, Team $team){
