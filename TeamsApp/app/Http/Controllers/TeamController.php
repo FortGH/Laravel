@@ -41,7 +41,7 @@ class TeamController extends Controller
         $team->pais = $request->input('pais');
         $team->save();
 
-        session()->flash('team','Team created successfully');
+        session()->flash('create','Team created successfully');
 
         return to_route('index');
     }
@@ -67,9 +67,15 @@ class TeamController extends Controller
         $team->pais = $request->input('pais');
         $team->save();
 
-        session()->flash('team','Team updated successfully');
+        session()->flash('update','Team updated successfully');
 
         return to_route('show',$team->id);
+    }
+
+    public function delete(Team $team){
+        $team->delete();
+
+        return to_route('index')->with('delete','Deleted successfully');
     }
 
    

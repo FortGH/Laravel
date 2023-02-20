@@ -30,5 +30,7 @@ Route::get('/edit/{team}',[TeamController::class,'edit'])-> name('edit');
 
 Route::patch('/update/{team}',[TeamController::class,'update'])-> name('update');
 
+Route::delete('/delete/{team}',[TeamController::class,'delete'])->name('delete');
+
 
 Route::get('/show/{team}',[TeamController::class,'show'])-> name('show');
