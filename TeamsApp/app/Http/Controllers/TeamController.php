@@ -46,5 +46,31 @@ class TeamController extends Controller
         return to_route('index');
     }
 
+    public function edit($team){
+        $teams =Team::find($team);
+        return view('components.teams.edit',['teams'=> $teams]);
+    }
+
+    public function update(Request $request, Team $team){
+        
+        $request->validate([
+
+            'nombre'=> ['required'],
+            'estadio'=> ['required'],
+            'ciudad'=> ['required'],
+            'pais'=> ['required']
+            
+        ]);
+        $team->nombre = $request->input('nombre');
+        $team->estadio = $request->input('estadio');
+        $team->ciudad = $request->input('ciudad');
+        $team->pais = $request->input('pais');
+        $team->save();
+
+        session()->flash('team','Team updated successfully');
+
+        return to_route('show',$team->id);
+    }
+
    
 }
