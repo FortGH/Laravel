@@ -3,9 +3,14 @@
         Teams
     </x-slot>
 
-    @if(session('team'))
+    @if(session('create'))
         <div>
-            {{session('team')}}
+            {{session('create')}}
+        </div>
+    @endif
+    @if(session('delete'))
+        <div>
+            {{session('delete')}}
         </div>
     @endif
      @foreach($teams as $team)

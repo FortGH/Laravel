@@ -3,6 +3,12 @@
         Show
     </x-slot>
 
+    @if(session('update'))
+        <div>
+            {{session('update')}}
+        </div>
+    @endif
+
      <h1>Show Team</h1></br>
      <div>
         <h2>
@@ -27,6 +33,17 @@
                 <a href={{route('edit',$teams->id)}}>Edit</a> 
             </button>
         </div>
+        <div>
+           <form action={{route('delete',$teams->id)}} method="POST">
+            @csrf  @method('delete')
+           
+            <button type="submit">
+                Delete 
+            </button>
+
+           </form>
+        </div>
     </div>
+
 
 </x-layouts.app>
