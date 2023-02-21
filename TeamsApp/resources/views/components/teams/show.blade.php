@@ -20,6 +20,6 @@
         <h2>
             Pais: {{$teams->pais}}
         </h2>
-    </div>
+   
 
 </x-layouts.app>

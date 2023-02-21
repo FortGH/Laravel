@@ -20,4 +20,13 @@ Route::get('/welcome', function () {
 
 Route::get('/',[TeamController::class,'index'])-> name('index');
 
+
+
+Route::get('/create',[TeamController::class,'create'])->name('create');
+
+Route::post('/team',[TeamController::class,'store'])->name('store');
+
+
+
+
 Route::get('/show/{team}',[TeamController::class,'show'])-> name('show');
