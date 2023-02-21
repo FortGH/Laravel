@@ -19,3 +19,5 @@ Route::get('/welcome', function () {
 });
 
 Route::get('/',[TeamController::class,'index'])-> name('index');
+
+Route::get('/show/{team}',[TeamController::class,'show'])-> name('show');
