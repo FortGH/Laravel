@@ -75,7 +75,7 @@ class TeamController extends Controller
     public function delete(Team $team){
         $team->delete();
 
-        return to_route('index')->with('delete','Deleted successfully');
+        return to_route('index')->with('delete','Team deleted successfully');
     }
 
    
