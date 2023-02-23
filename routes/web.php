@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\GameController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +33,10 @@ Route::get('/edit/{team}',[TeamController::class,'edit'])-> name('edit');
 Route::patch('/update/{team}',[TeamController::class,'update'])-> name('update');
 
 Route::delete('/delete/{team}',[TeamController::class,'delete'])->name('delete');
+
+Route::get('/new-game/{team}',[GameController::class,'create'])->name('newGame');
+
+Route::post('/new-game',[GameController::class,'store'])->name('storeGame');
 
 
 Route::get('/show/{team}',[TeamController::class,'show'])-> name('show');

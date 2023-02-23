@@ -9,6 +9,11 @@
             <h2 class="text-xl font-normal leading-normal ml-10 mt-0 mb-2 text-red-600 ">{{session('update')}}</h2>
         </div>
     @endif
+    @if(session('newGame'))
+        <div>
+            <h2 class="text-xl font-normal leading-normal ml-10 mt-0 mb-2 text-red-600 ">{{session('newGame')}}</h2>
+        </div>
+    @endif
 
     <div class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
     
@@ -38,7 +43,7 @@
                     </div>
                     <div class="pt-12 pb-8">
                         <button class="bg-green-500  hover:bg-green-800 text-white font-bold py-2 px-4 ">
-                            <a href={{route('edit',$teams->id)}}>New Game</a>
+                            <a href={{route('newGame',$teams->id)}}>New Game</a>
                         </button> 
                     </div>
                     <div class="pt-12 pb-8">
