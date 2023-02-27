@@ -15,7 +15,7 @@
                     <img class="hover:grow hover:shadow-lg" src="https://images.unsplash.com/photo-1555982105-d25af4182e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
                     <div class="pt-3 flex items-center justify-between">
                         <input type="hidden" name="team1" value={{$team->id}}>
-                        <input type="text" name="" value={{$team->nombre}}  readonly>
+                        <input type="text" name="" value="{{$team->nombre}}"  readonly>
                         {{--<h2 name="team1">{{$team->nombre}}</h2>--}}
                     </div>
             </div>

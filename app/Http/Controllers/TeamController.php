@@ -9,7 +9,7 @@ class TeamController extends Controller
 {
     public function index(){
 
-        $teams = Team::get();
+        $teams = Team::where('existe',1)->get();
         return view('components.teams.index',['teams' => $teams]);
     }
 
@@ -39,6 +39,7 @@ class TeamController extends Controller
         $team->estadio = $request->input('estadio');
         $team->ciudad = $request->input('ciudad');
         $team->pais = $request->input('pais');
+        $team->existe = 1;
         $team->save();
 
         session()->flash('create','Team created successfully');
@@ -73,7 +74,8 @@ class TeamController extends Controller
     }
 
     public function delete(Team $team){
-        $team->delete();
+        $team->existe = 0;
+        $team ->save();
 
         return to_route('index')->with('delete','Team deleted successfully');
     }

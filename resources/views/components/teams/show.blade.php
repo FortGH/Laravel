@@ -73,5 +73,10 @@
     
     </div>
     </div>
+    <div class="pt-12 pb-8">
+        <button class="bg-green-500  hover:bg-green-800 text-white font-bold py-2 px-4 ">
+            <a href={{route('indexGames',$teams->id)}}>Games</a>
+        </button> 
+    </div>
 
 </x-layouts.app>

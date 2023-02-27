@@ -38,5 +38,7 @@ Route::get('/new-game/{team}',[GameController::class,'create'])->name('newGame')
 
 Route::post('/new-game',[GameController::class,'store'])->name('storeGame');
 
+Route::get('/games/{team}',[GameController::class,'index'])-> name('indexGames');
+
 
 Route::get('/show/{team}',[TeamController::class,'show'])-> name('show');
