@@ -40,5 +40,6 @@ Route::post('/new-game',[GameController::class,'store'])->name('storeGame');
 
 Route::get('/games/{team}',[GameController::class,'index'])-> name('indexGames');
 
+Route::get('/game/{team}',[GameController::class,'show'])-> name('showGame');
 
 Route::get('/show/{team}',[TeamController::class,'show'])-> name('show');

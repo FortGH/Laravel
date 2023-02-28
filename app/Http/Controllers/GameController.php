@@ -15,12 +15,17 @@ class GameController extends Controller
         $games= DB::table('games')->where('id_local',$team->id)->orWhere('id_visita',$team->id)->get();
         $teams= Team::get();
 
-        // $games1 = Game::get()->where('id_local',$team->id)orWhere('id_visita',$team->id)->get;
-        // $games2 = Game::get()->where('id_visita',$team->id);
-        // $games[] = $games1;
-        // $games[0] = $games2;
         return view('components.games.index',['games' => $games,'teams' => $teams]);
     }
+
+    public function show($game){
+
+        $gamer = Game::findOrFail($game);
+        $teams= Team::get();
+       
+        return view('components.games.show',['game' => $gamer,'teams' => $teams]);
+    }
+
 
     public function create(Team $team){
 
@@ -56,4 +61,5 @@ class GameController extends Controller
 
         return to_route('show',$game->id_local);
     }
+
 }
