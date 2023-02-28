@@ -1,16 +1,17 @@
 <x-layouts.app>
-
     <x-slot name="title">
-        Game
+        Edit Game
     </x-slot>
-    <h1 class="text-6xl font-normal leading-normal mt-0 mb-2 text-cyan-800 text-center">Game</h1>
 
-    @if(session('updateGame'))
-        <div>
-            <h2 class="text-xl font-normal leading-normal ml-10 mt-0 mb-2 text-red-600 ">{{session('updateGame')}}</h2>
-        </div>
-    @endif
+    <h1 class="text-6xl font-normal leading-normal mt-0 mb-2 text-cyan-800 text-center">Edit Game</h1>
 
+
+    <form action={{route('updateGame',$game->id)}} method="POST">
+
+        @csrf @method('PATCH')
+        @foreach($errors->all() as $error)
+        <div><small class="text-red-500 grid  place-items-center">{{$error}}</small></div></br>
+        @endforeach
     <div class="w-full mb-5 container mx-auto flex items-center flex-wrap pt-4 pb-12">
         
         @foreach($teams as $team)
@@ -41,18 +42,27 @@
         @endforeach
         
         <div class="w-1/4 p-6 ml-10 flex flex-col">
-            <h2 class= "mx-16 flex items-center justify-center text-xl">Resultado</h2>
-                <div class="flex items-center justify-center mb-24">
-                    <p class="text-4xl">{{$game->goles_local}}</p>
-                    <p class="text-4xl">-</p>
-                    <p class="text-4xl">{{$game->goles_visita}}</p>
-                </div>
-                <div class="flex items-center justify-center ">
-                    Fecha: {{$game->fecha}}
-                </div>
-                <div class="flex items-center justify-center ">
-                    Estadio: {{$game->estadio}}
-                </div>
+            <h2 class="text-center">Marcador</h2>
+            <div class="container mx-auto ml-2 flex items-center flex-wrap pt-4 pb-12">
+                <input class="w-20 ml-10 mr-2 bg-gray-200" name="goles_local" type="number" value="{{old('goles_local',$game->goles_local)}}">
+                <p>-</p>
+                <input class="w-20 ml-2 bg-gray-200" name="goles_visita" type="number" value="{{old('goles_visita',$game->goles_visita)}}">
+            </div>
+            <div class="flex items-center flex-wrap mb-4">
+                <p class="text-center ml-10 bg-gray-200">Estadio: 
+                    <select name="estadio">
+                        @foreach($teams as $team)
+                        @if($team->id == $game->id_local || $team->id == $game->id_visita)
+                        <option value="{{$team->estadio}}">{{$team->estadio}}</option>
+                        @endif
+                        @endforeach
+                    </select>
+                </p>
+            </div>
+            <div>
+                <p class="text-center ml-6 bg-gray-200">Fecha: <input class="w-36" type="date" name="fecha"  value="{{old('fecha',$game->fecha)}}"></p>
+                
+            </div>
             
         </div>
         
@@ -84,17 +94,11 @@
         @endforeach                   
         
     </div>
-    <div class="w-full mb-5 container mx-auto flex items-center flex-wrap pt-4 pb-12">
-        <div class="grid  mt-5 mb-10 place-items-center w-1/2 mb-5 container mx-auto flex items-center flex-wrap pt-4 pb-12">
-            <button class="bg-green-500  hover:bg-green-800 text-white font-bold py-2 px-4 ">
-                <a href={{route('editGame',$game->id)}}>Edit</a>
-            </button> 
-        </div>
-        <div class="grid  mt-5 mb-10 place-items-center w-1/2 mb-5 container mx-auto flex items-center flex-wrap pt-4 pb-12">
-            <button class="bg-red-500  hover:bg-red-800 text-white font-bold py-2 px-4 ">
-                <a href="#">Delete</a>
-            </button> 
-        </div>
-    </div>
+    <div class="grid  mt-5 mb-10 place-items-center w-1/2 mb-5 container mx-auto flex items-center flex-wrap pt-4 pb-12">
+        <button type="submit" class="bg-green-500  hover:bg-green-800 text-white font-bold py-2 px-4 ">
+            Guardar
+        </button> 
+    </div>  
+</form>
 
 </x-layouts.app>

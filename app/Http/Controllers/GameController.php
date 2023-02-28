@@ -62,4 +62,32 @@ class GameController extends Controller
         return to_route('show',$game->id_local);
     }
 
+    public function edit(Game $game){
+        
+        $teams = Team::get();
+        return view('components.games.edit',['teams'=>$teams, 'game'=>$game]);
+    }
+
+    public function update(Request $request, Game $game){
+        
+        $request->validate([
+
+            'goles_local'=> ['required','integer'],
+            'goles_visita'=> ['required','integer'],
+            'estadio'=> ['required'],
+            'fecha'=> ['required','date']
+            
+        ]);
+        $game->goles_local = $request->input('goles_local');
+        $game->goles_visita = $request->input('goles_visita');
+        $game->estadio= $request->input('estadio');
+        $game->fecha = $request->input('fecha');
+       
+        $game->save();
+
+        session()->flash('updateGame','Game updated successfully');
+
+        return to_route('showGame',$game->id);
+    }
+
 }
