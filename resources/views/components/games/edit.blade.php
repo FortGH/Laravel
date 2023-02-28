@@ -60,7 +60,7 @@
                 </p>
             </div>
             <div>
-                <p class="text-center ml-6 bg-gray-200">Fecha: <input class="w-36" type="date" name="fecha"  value="{{old('fecha',$game->fecha)}}"></p>
+                <p class="text-center ml-6 bg-gray-200">Fecha: <input class="w-36"  name="fecha"  value="{{old('fecha',$game->fecha)}}"></p>
                 
             </div>
             

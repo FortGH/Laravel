@@ -10,6 +10,11 @@
             <h2 class="text-xl font-normal leading-normal ml-10 mt-0 mb-2 text-red-600 ">{{session('create')}}</h2>
         </div>
     @endif
+    @if(session('deleteGame'))
+    <div>
+        <h2 class="text-xl font-normal leading-normal ml-10 mt-0 mb-2 text-red-600 ">{{session('deleteGame')}}</h2>
+    </div>
+@endif
     @if(session('delete'))
         <div>
             <h2 class="text-xl font-normal leading-normal ml-10 mt-0 mb-2 text-red-600 ">{{session('delete')}}</h2>

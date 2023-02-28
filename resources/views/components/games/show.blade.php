@@ -18,7 +18,7 @@
                 @switch($team->existe)
                     @case(1)
                         <div class="w-1/4 p-6 ml-36 flex flex-col">
-                            <img class="hover:grow hover:shadow-lg" src="https://images.unsplash.com/photo-1555982105-d25af4182e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
+                            <img  src="https://images.unsplash.com/photo-1555982105-d25af4182e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
                                 <div class="pt-3 flex items-center justify-between text-center">
                                     <p class=" ml-20 text-center text-xl"> 
                                         {{$team->nombre }}
@@ -28,7 +28,7 @@
                     @break
                     @case(0)
                         <div class="w-1/4 p-6 ml-36 flex flex-col">
-                            <img class="hover:grow hover:shadow-lg" src="https://images.unsplash.com/photo-1508423134147-addf71308178?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
+                            <img  src="https://images.unsplash.com/photo-1508423134147-addf71308178?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
                                 <div class="pt-3 flex items-center justify-between text-center">
                                     <p class=" ml-20 text-center text-xl"> 
                                         <small class="flex text-center text-red-500">El equipo ya no existe</small>
@@ -61,7 +61,7 @@
                 @switch($team->existe)
                     @case(1)
                         <div class="w-1/4 p-6 ml-2 flex flex-col">
-                            <img class="hover:grow hover:shadow-lg" src="https://images.unsplash.com/photo-1555982105-d25af4182e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
+                            <img  src="https://images.unsplash.com/photo-1555982105-d25af4182e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
                                 <div class="pt-3 flex items-center justify-between text-center">
                                     <p class=" ml-20 text-center text-xl"> 
                                         {{$team->nombre }}
@@ -71,7 +71,7 @@
                     @break
                     @case(0)
                         <div class="w-1/4 p-6 ml-2    flex flex-col">
-                            <img class="hover:grow hover:shadow-lg" src="https://images.unsplash.com/photo-1508423134147-addf71308178?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
+                            <img src="https://images.unsplash.com/photo-1508423134147-addf71308178?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
                                 <div class="pt-3 flex items-center justify-between text-center">
                                     <p class=" ml-20 text-center text-xl"> 
                                         <small class="text-center text-red-500">El equipo ya no existe</small>
@@ -91,9 +91,12 @@
             </button> 
         </div>
         <div class="grid  mt-5 mb-10 place-items-center w-1/2 mb-5 container mx-auto flex items-center flex-wrap pt-4 pb-12">
-            <button class="bg-red-500  hover:bg-red-800 text-white font-bold py-2 px-4 ">
-                <a href="#">Delete</a>
-            </button> 
+            <form action={{route('deleteGame',$game->id)}} method="POST">
+                @csrf  @method('delete')
+            <button class="bg-red-600 mx-20 hover:bg-red-900 text-white font-bold py-2 px-4" type="submit">
+            Delete
+            </button>
+            </form> 
         </div>
     </div>
 

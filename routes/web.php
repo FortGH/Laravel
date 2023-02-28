@@ -55,3 +55,6 @@ Route::get('/edit-game/{game}',[GameController::class,'edit'])-> name('editGame'
 
 Route::patch('/update-game/{game}',[GameController::class,'update'])-> name('updateGame'); //guardar partidos con los cambios
 
+
+Route::delete('/delete-game/{game}',[GameController::class,'delete'])->name('deleteGame'); //eliminar partido
+

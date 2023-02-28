@@ -90,4 +90,11 @@ class GameController extends Controller
         return to_route('showGame',$game->id);
     }
 
+    public function delete(Game $game){
+
+        $game->delete();
+
+        return to_route('index')->with('deleteGame','Game deleted succesfully');
+    }
+
 }

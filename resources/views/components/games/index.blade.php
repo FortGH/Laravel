@@ -22,7 +22,7 @@
                         @switch($team->existe)
                             @case(1)
                                 <div class="w-1/4 p-6 ml-36 flex flex-col">
-                                    <img class="hover:grow hover:shadow-lg" src="https://images.unsplash.com/photo-1555982105-d25af4182e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
+                                    <img  src="https://images.unsplash.com/photo-1555982105-d25af4182e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
                                         <div class="pt-3 flex items-center justify-between text-center">
                                             <p class=" ml-20 text-center text-xl"> 
                                                 {{$team->nombre }}
@@ -32,7 +32,7 @@
                             @break
                             @case(0)
                                 <div class="w-1/4 p-6 ml-36 flex flex-col">
-                                    <img class="hover:grow hover:shadow-lg" src="https://images.unsplash.com/photo-1508423134147-addf71308178?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
+                                    <img  src="https://images.unsplash.com/photo-1508423134147-addf71308178?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
                                         <div class="pt-3 flex items-center justify-between text-center">
                                             <p class=" ml-20 text-center text-xl"> 
                                                 <small class="text-center text-red-500">El equipo ya no existe</small>
@@ -44,7 +44,7 @@
                      @endif
                 @endforeach
             
-            <a href={{route('showGame',$game->id)}} class="w-1/4 p-6 flex flex-col">
+            <a class="hover:grow-0 hover:shadow-lg" href={{route('showGame',$game->id)}} class="w-1/4 p-6 flex flex-col">
                 <div class="p-6 flex flex-col">
                     <h2 class= "flex items-center justify-center mb-24 mx-16 text-xl">Resultado</h2>
                         <div class="flex items-center justify-center mb-24">
@@ -59,7 +59,7 @@
                     @switch($team->existe)
                         @case(1)
                             <div class="w-1/4 p-6 ml-2 flex flex-col">
-                                <img class="hover:grow hover:shadow-lg" src="https://images.unsplash.com/photo-1555982105-d25af4182e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
+                                <img  src="https://images.unsplash.com/photo-1555982105-d25af4182e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
                                     <div class="pt-3 flex items-center justify-between text-center">
                                         <p class=" ml-20 text-center text-xl"> 
                                             {{$team->nombre }}
@@ -69,7 +69,7 @@
                         @break
                         @case(0)
                             <div class="w-1/4 p-6 ml-2    flex flex-col">
-                                <img class="hover:grow hover:shadow-lg" src="https://images.unsplash.com/photo-1508423134147-addf71308178?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
+                                <img  src="https://images.unsplash.com/photo-1508423134147-addf71308178?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
                                     <div class="pt-3 flex items-center justify-between text-center">
                                         <p class=" ml-20 text-center text-xl"> 
                                             <small class="text-center text-red-500">El equipo ya no existe</small>
