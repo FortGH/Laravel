@@ -10,6 +10,13 @@
         </div>
     @endif
 
+    @if(session('newGame'))
+        <div>
+            <h2 class="text-xl font-normal leading-normal ml-10 mt-0 mb-2 text-red-600 ">{{session('newGame')}}</h2>
+        </div>
+    @endif
+
+
     <div class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
     
         <!--Main Col-->
@@ -38,7 +45,9 @@
                     </div>
                     <div class="pt-12 pb-8">
                         <button class="bg-green-500  hover:bg-green-800 text-white font-bold py-2 px-4 ">
-                            <a href={{route('edit',$teams->id)}}>New Game</a>
+
+                            <a href={{route('newGame',$teams->id)}}>New Game</a>
+
                         </button> 
                     </div>
                     <div class="pt-12 pb-8">
@@ -61,12 +70,20 @@
         <!--Img Col-->
         <div class="w-full lg:w-2/5">
             <!-- Big profile image for side bar (desktop) -->
-            <img src="https://source.unsplash.com/MP0IUfwrn0A" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block">
+
+            <img src={{$teams->url?$teams->url:'https://images.unsplash.com/photo-1508423134147-addf71308178?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80'}} class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block">
+
             <!-- Image from: http://unsplash.com/photos/MP0IUfwrn0A -->
             
         </div>
     
     </div>
     </div>
+    <div class="pt-12 pb-8">
+        <button class="bg-green-500  hover:bg-green-800 text-white font-bold py-2 px-4 ">
+            <a href={{route('indexGames',$teams->id)}}>Games</a>
+        </button> 
+    </div>
+
 
 </x-layouts.app>
