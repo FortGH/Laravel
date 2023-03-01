@@ -10,6 +10,7 @@
             <h2 class="text-xl font-normal leading-normal ml-10 mt-0 mb-2 text-red-600 ">{{session('create')}}</h2>
         </div>
     @endif
+
     @if(session('deleteGame'))
     <div>
         <h2 class="text-xl font-normal leading-normal ml-10 mt-0 mb-2 text-red-600 ">{{session('deleteGame')}}</h2>
@@ -38,5 +39,6 @@
     @else
         <h2 class="text-2xl font-normal leading-normal mt-0 mb-2 text-red-500 text-center">No hay equipos</h2>
     @endif
+
 
 </x-layouts.app>

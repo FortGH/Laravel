@@ -5,7 +5,9 @@
     <h1 class="text-6xl font-normal leading-normal mt-0 mb-2 text-cyan-800 text-center">Create a Team</h1>
 
     <div class="max-w-4xl bg-gray-100 flex items-center h-auto lg:h-screen flex-wrap mx-52 my-52 lg:my-0">
+
     <form action={{route('store')}} method="POST" class="w-full max-w-lg pb-5 mb-10 items-center h-auto" enctype="multipart/form-data">
+
         @csrf
         @foreach($errors->all() as $error)
         <div><small class="text-red-500 ml-52 flex items-center">{{$error}}</small></div></br>
@@ -41,6 +43,7 @@
               <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
               </div>
             </div>
+
             <label class="grid  mt-5 mb-2 place-items-center block uppercase tracking-wide text-gray-700 text-xs font-bold mt-5 mb-2 ml-10" for="grid-state">
               Imagen
             </label>
