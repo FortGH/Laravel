@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Team;
 
+
 use Illuminate\Support\Facades\Storage;
 
 class TeamController extends Controller
 {
     public function index(){
 
+
         $teams = Team::where('existe',1)->get();
+
         return view('components.teams.index',['teams' => $teams]);
     }
 
@@ -53,6 +56,7 @@ class TeamController extends Controller
         session()->flash('create','Team created successfully');
 
         return  to_route('index');
+
     }
 
     public function edit($team){
@@ -91,6 +95,7 @@ class TeamController extends Controller
     public function delete(Team $team){
         $team->existe = 0;
         $team ->save();
+
 
         return to_route('index')->with('delete','Team deleted successfully');
     }
