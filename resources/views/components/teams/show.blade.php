@@ -38,19 +38,24 @@
                   </svg><strong>{{ucfirst($teams->ciudad) . ", " . ucfirst($teams->pais)}}</strong></p>
                   
                 <div class="flex">
-                    <div class="pt-12 pb-8">
+                    <div class="-ml-10 pt-12 pb-8">
                         <button class="bg-cyan-500 ml-10 mr-20 hover:bg-cyan-800 text-white font-bold py-5 px-6 rounded-full">
                             <a href={{route('edit',$teams->id)}}>Edit</a>
                         </button> 
                     </div>
-                    <div class="pt-12 pb-8">
+                    <div class="-ml-10 pt-12 pb-8">
                         <button class="bg-green-500  hover:bg-green-800 text-white font-bold py-2 px-4 ">
 
                             <a href={{route('newGame',$teams->id)}}>New Game</a>
 
                         </button> 
                     </div>
-                    <div class="pt-12 pb-8">
+                    <div class="ml-10 pt-12 pb-8">
+                        <button class="bg-emerald-500  hover:bg-emerald-800 text-white font-bold py-2 px-4 ">
+                            <a href={{route('indexGames',$teams->id)}}>Games</a>
+                        </button> 
+                    </div>
+                    <div class="-ml-10 pt-12 pb-8">
                         <form action={{route('delete',$teams->id)}} method="POST">
                             @csrf  @method('delete')
                         <button class="bg-red-600 mx-20 hover:bg-red-900 text-white font-bold py-5 px-4 rounded-full" type="submit">
@@ -79,11 +84,5 @@
     
     </div>
     </div>
-    <div class="pt-12 pb-8">
-        <button class="bg-green-500  hover:bg-green-800 text-white font-bold py-2 px-4 ">
-            <a href={{route('indexGames',$teams->id)}}>Games</a>
-        </button> 
-    </div>
-
 
 </x-layouts.app>
