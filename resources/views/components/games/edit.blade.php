@@ -19,7 +19,7 @@
                 @switch($team->existe)
                     @case(1)
                         <div class="w-1/4 p-6 ml-36 flex flex-col">
-                            <img class="hover:grow hover:shadow-lg" src="https://images.unsplash.com/photo-1555982105-d25af4182e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
+                            <img class="hover:grow hover:shadow-lg" src={{$team->url?$team->url:'https://images.unsplash.com/photo-1508423134147-addf71308178?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80'}}>
                                 <div class="pt-3 flex items-center justify-between text-center">
                                     <p class=" ml-20 text-center text-xl"> 
                                         {{$team->nombre }}
@@ -60,7 +60,7 @@
                 </p>
             </div>
             <div>
-                <p class="text-center ml-6 bg-gray-200">Fecha: <input class="w-36"  name="fecha"  value="{{old('fecha',$game->fecha)}}"></p>
+                <p class="text-center ml-6 bg-gray-200">Fecha: <input class="w-36"  name="fecha" type="date" value="{{old('fecha',$game->fecha)}}"></p>
                 
             </div>
             
@@ -71,7 +71,7 @@
                 @switch($team->existe)
                     @case(1)
                         <div class="w-1/4 p-6 ml-2 flex flex-col">
-                            <img class="hover:grow hover:shadow-lg" src="https://images.unsplash.com/photo-1555982105-d25af4182e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
+                            <img class="hover:grow hover:shadow-lg" src={{$team->url?$team->url:'https://images.unsplash.com/photo-1508423134147-addf71308178?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80'}}>
                                 <div class="pt-3 flex items-center justify-between text-center">
                                     <p class=" ml-20 text-center text-xl"> 
                                         {{$team->nombre }}

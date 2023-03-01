@@ -18,8 +18,8 @@ return new class extends Migration
             $table -> unsignedBigInteger('id_visita');
             $table -> string('estadio');
             $table -> date('fecha');
-            $table -> integer('goles_local');
-            $table -> integer('goles_visita');
+            $table -> unsignedInteger('goles_local');
+            $table -> unsignedInteger('goles_visita');
             $table -> foreign('id_local')
                     -> references('id')
                     -> on('teams');

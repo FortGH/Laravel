@@ -41,8 +41,8 @@ class GameController extends Controller
             'team1'=> ['required','integer'],
             'team2'=> ['required','integer'],
             'estadio'=> ['required'],
-            'goles_local'=> ['required','integer'],
-            'goles_visita'=> ['required','integer'],
+            'goles_local'=> ['required','integer', 'min:0'],
+            'goles_visita'=> ['required','integer', 'min:0'],
             'fecha'=> ['required','date']
             
         ]);

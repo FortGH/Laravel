@@ -5,7 +5,7 @@
     <h1 class="text-6xl font-normal leading-normal mt-0 mb-2 text-cyan-800 text-center">Edit Team</h1>
 
     <div class="max-w-4xl bg-gray-100 flex items-center h-auto lg:h-screen flex-wrap mx-52 my-52 lg:my-0">
-    <form action={{route('update', $teams->id)}} method="POST" class="w-full max-w-lg pb-5 mb-10 items-center h-auto">
+    <form action={{route('update', $teams->id)}} method="POST" enctype="multipart/form-data" class="w-full max-w-lg pb-5 mb-10 items-center h-auto">
         @csrf @method('patch')
         @foreach($errors->all() as $error)
         <div><small class="text-red-500 ml-52 flex items-center">{{$error}}</small></div></br>
@@ -36,12 +36,18 @@
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 ml-20" for="grid-state">
               Pais
             </label>
-            <div class="">
+            <div>
                 <input  value="{{old('pais',$teams->pais)}}" name="pais" class="appearance-none block w-36 bg-gray-200 ml-20 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Pais">
               <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
               </div>
             </div>
-            <div class="pt-12 pb-8">
+            <label class="grid  mt-5 mb-2 place-items-center block uppercase tracking-wide text-gray-700 text-xs font-bold mt-5 mb-2 ml-10" for="grid-state">
+              Imagen
+            </label>
+            <div>
+                <input  name="imagen" class="grid  mt-5 mb-10 place-items-center appearance-none block bg-gray-200 -ml-24 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="file" accept="image/*">
+            </div>
+            <div class="pt-12 pb-8"> 
                 <button type="submit" class="bg-cyan-500 ml-10 mr-20 hover:bg-cyan-800 text-white font-bold py-5 px-6 rounded-full">
                     Editar
                 </button> 

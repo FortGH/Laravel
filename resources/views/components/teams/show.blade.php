@@ -66,7 +66,7 @@
         <!--Img Col-->
         <div class="w-full lg:w-2/5">
             <!-- Big profile image for side bar (desktop) -->
-            <img src="https://source.unsplash.com/MP0IUfwrn0A" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block">
+            <img src={{$teams->url?$teams->url:'https://images.unsplash.com/photo-1508423134147-addf71308178?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80'}} class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block">
             <!-- Image from: http://unsplash.com/photos/MP0IUfwrn0A -->
             
         </div>
