@@ -18,6 +18,7 @@ return new class extends Migration
             $table -> string('estadio');
             $table -> string('ciudad');
             $table -> string('pais');
+            $table -> boolean('existe');
             
             $table->timestamps();
         });
